@@ -110,15 +110,7 @@ int getAt(DNode* head, int k) {
     return (cur != nullptr) ? cur->data : -1;
 }
 
-int indexOf(DNode* head, int x) {
-    int index = 0;
-    while (head != nullptr) {
-        if (head->data == x) return index;
-        head = head->next;
-        index++;
-    }
-    return -1;
-}
+
 
 void printList(DNode* head) {
     while (head != nullptr) {
@@ -128,21 +120,5 @@ void printList(DNode* head) {
     cout << endl;
 }
 
-void printReverse(DNode* head) {
-    if (head == nullptr) return;
-    DNode* cur = head;
-    while (cur->next != nullptr) cur = cur->next; 
-    while (cur != nullptr) { 
-        cout << cur->data << " ";
-        cur = cur->prev;
-    }
-    cout << endl;
-}
 
-void clearList(DNode*& head) {
-    while (head != nullptr) {
-        DNode* temp = head;
-        head = head->next;
-        delete temp;
-    }
-}
+

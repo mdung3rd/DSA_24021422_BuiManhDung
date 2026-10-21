@@ -98,16 +98,6 @@ int getAt(Node* head, int k) {
     return (cur != nullptr) ? cur->data : -1;
 }
 
-int indexOf(Node* head, int x) {
-    int index = 0;
-    while (head != nullptr) {
-        if (head->data == x) return index;
-        head = head->next;
-        index++;
-    }
-    return -1;
-}
-
 void printList(Node* head) {
     while (head != nullptr) {
         cout << head->data << " ";
@@ -116,22 +106,8 @@ void printList(Node* head) {
     cout << endl;
 }
 
-void printReverseHelper(Node* head) {
-    if (head == nullptr) return;
-    printReverseHelper(head->next);
-    cout << head->data << " ";
-}
 
-void printReverse(Node* head) {
-    printReverseHelper(head);
-    cout << endl;
-}
 
-void clearList(Node*& head) {
-    while (head != nullptr) {
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-    }
-}
+
+
 
