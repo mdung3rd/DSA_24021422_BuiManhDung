@@ -13,14 +13,6 @@ int getAt(int index) {
     return arr[index];
 }
 
-void getIdArr(int index) {
-    if (index >= 0 && index < n) {
-        cout << arr[index] << endl;
-    } else {
-        cout << "Index khong hop le" << endl;
-    }
-}
-
 void insertFirst(int x) {
     if (n >= MAX) {
         cout << "Mang day" << endl;

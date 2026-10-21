@@ -5,7 +5,12 @@ using namespace std;
 
 //cach 1: dung list
 
-struct LinkQueue {
+struct ListQueue {
+
+    ListQueue(){
+        n = 0;
+    }
+
     bool isEmpty() {
         return n == 0;
     }
