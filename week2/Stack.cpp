@@ -5,6 +5,11 @@ using namespace std;
 
 // cach 1: dung list
 struct ListStack {
+    
+    ListStack() {
+        n = 0;
+    }
+
     bool isEmpty() {
         return n == 0;
     }

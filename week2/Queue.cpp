@@ -5,7 +5,7 @@ using namespace std;
 
 //cach 1: dung list
 
-struct ArrayQueue {
+struct LinkQueue {
     bool isEmpty() {
         return n == 0;
     }
@@ -39,11 +39,11 @@ struct ArrayQueue {
 
 // cach 2: dung linked list
 
-struct LinkedQueue {
+struct LinkedListQueue {
     Node* head;
     int count;
 
-    LinkedQueue() {
+    LinkedListQueue() {
         head = nullptr;
         count = 0;
     }
