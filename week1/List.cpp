@@ -1,105 +1,107 @@
 #include <iostream>
 using namespace std;
 
-int arr[100];
-int n=0;
+const int MAX = 100;
+int arr[MAX];
+int n = 0;
+
+int getAt(int index) {
+    if (index < 0 || index >= n) {
+        cout << "Index khong hop le" << endl;
+        return -1;
+    }
+    return arr[index];
+}
 
 void getIdArr(int index) {
-    cout << arr[index] << endl;
+    if (index >= 0 && index < n) {
+        cout << arr[index] << endl;
+    } else {
+        cout << "Index khong hop le" << endl;
+    }
 }
-void insertLast(int x)
-{
+
+void insertFirst(int x) {
+    if (n >= MAX) {
+        cout << "Mang day" << endl;
+        return;
+    }
+    for (int i = n; i > 0; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[0] = x;
+    n++;
+}
+
+void insertLast(int x) {
+    if (n >= MAX) {
+        cout << "Mang day" << endl;
+        return;
+    }
     arr[n] = x;
     n++;
 }
 
-void insertFirst(int x)
-{
-    for(int i=n; i>0; i--)
-    {
-        arr[i]=arr[i-1];
+void insertValue(int x, int index) {
+    if (n >= MAX) {
+        cout << "Mang day" << endl;
+        return;
     }
-    arr[0]=x;
+    if (index < 0 || index > n) {
+        cout << "Index khong hop le" << endl;
+        return;
+    }
+    for (int i = n; i > index; i--) {
+        arr[i] = arr[i - 1];
+    }
+    arr[index] = x;
     n++;
 }
-void insertValue(int x, int index)
-{
-    for(int i=n;i>index;i--)
-    {
-        arr[i]=arr[i-1];
+
+void deleteFirst() {
+    if (n <= 0) {
+        cout << "Mang rong" << endl;
+        return;
     }
-    arr[index]=x;
-    n++;
-}
-void deleteFirst() 
-{
     for (int i = 0; i < n - 1; i++) {
         arr[i] = arr[i + 1];
     }
     n--;
 }
-void deleteLast() 
-{
+
+void deleteLast() {
+    if (n <= 0) {
+        cout << "Mang rong" << endl;
+        return;
+    }
     n--;
 }
-void deleteIdArr(int index) 
-{
+
+void deleteIdArr(int index) {
+    if (n <= 0) {
+        cout << "Mang rong" << endl;
+        return;
+    }
+    if (index < 0 || index >= n) {
+        cout << "Index khong hop le" << endl;
+        return;
+    }
     for (int i = index; i < n - 1; i++) {
         arr[i] = arr[i + 1];
     }
-
     n--;
 }
-void printForward() 
-{
+
+void printForward() {
     for (int i = 0; i < n; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
 }
-void printReverse() 
-{
+
+void printReverse() {
     for (int i = n - 1; i >= 0; i--) {
         cout << arr[i] << " ";
     }
     cout << endl;
-}
-int main()
-{
-    insertLast(10);
-    insertLast(20);
-    insertLast(30);
-
-    cout<<"In vi tri dau:"<<endl;
-    getIdArr(1);
-    cout<<"In xuôi mảng:"<<endl;
-    printForward();
-
-    cout<<"Chen 5 vao vi tri đầu:"<<endl;
-
-    insertFirst(5);
-
-    printForward();
-    cout<<"Chen 15 vao vi tri thu 3:"<<endl;
-
-    insertValue(15, 2);
-
-    printForward();
-    cout<<"Xoa vi tri dau:"<<endl;
-    deleteFirst();
-
-    printForward();
-
-    cout<<"Xoa vi tri cuôi:"<<endl;
-    deleteLast();
-
-    printForward();
-    cout<<"Xoa vi tri thu 2:"<<endl;
-    deleteIdArr(1);
-
-    printForward();
-    cout<<"In nguoc mang"<<endl;
-    printReverse();
-
-   
 }
