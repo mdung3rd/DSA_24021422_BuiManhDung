@@ -41,7 +41,7 @@ void insertValue(Node*& head, int x, int k) {
         return;
     }
     Node* cur = head;
-    for (int i = 0; i < k - 1 && cur->next != nullptr; i++) {
+    for (int i = 0; i < k - 1; i++) {
         cur = cur->next;
     }
     Node* p = createNode(x);
@@ -80,7 +80,7 @@ void deleteValue(Node*& head, int k) {
         return;
     }
     Node* cur = head;
-    for (int i = 0; i < k - 1 && cur->next != nullptr; i++) {
+    for (int i = 0; i < k - 1; i++) {
         cur = cur->next;
     }
     if (cur->next == nullptr) return;
@@ -92,7 +92,7 @@ void deleteValue(Node*& head, int k) {
 int getAt(Node* head, int k) {
     if (k < 0) return -1;
     Node* cur = head;
-    for (int i = 0; i < k && cur != nullptr; i++) {
+    for (int i = 0; i < k; i++) {
         cur = cur->next;
     }
     return (cur != nullptr) ? cur->data : -1;
