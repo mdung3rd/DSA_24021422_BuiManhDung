@@ -30,8 +30,9 @@ struct PriorityQueue {
             if (j + 1 < size && arr[j + 1] > arr[j]) {
                 j++;
             }
+
             if (arr[k] >= arr[j]) break;
-            swap(arr[k], arr[j]);
+            else swap(arr[k], arr[j]);
             k = j;
         }
     }
