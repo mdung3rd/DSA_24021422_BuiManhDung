@@ -36,7 +36,7 @@ struct PriorityQueue {
         }
     }
 
-    // Them mot phan tu vao hang doi uu tien
+    // them mot phan tu vao hang doi uu tien
     void push(int val) {
         if (size >= MAX) {
             return;
@@ -58,7 +58,7 @@ struct PriorityQueue {
         return maxVal;
     }
 
-    // Xem phan tu co do uu tien cao nhat ma khong xoa
+    // xem phan tu co do uu tien cao nhat ma khong xoa
     int top() {
         if (isEmpty()) {
             return -1;
