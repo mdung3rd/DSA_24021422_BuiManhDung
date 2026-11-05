@@ -3,7 +3,7 @@ using namespace std;
 
 void sink(int arr[], int n, int i) {
     while (2 * i + 1 < n) {
-        int j = 2 * i + 1; // con ben trai
+        int j = 2 * i + 1;
         if (j + 1 < n && arr[j + 1] > arr[j]) {
             j++; 
         }
@@ -13,7 +13,6 @@ void sink(int arr[], int n, int i) {
     }
 }
 
-// Ham Heap Sort
 void heapSort(int arr[], int n) {
     for (int i = n / 2 - 1; i >= 0; i--) {
         sink(arr, n, i);
